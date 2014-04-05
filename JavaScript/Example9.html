@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function(){
+var customer = {
+id:2299229922,
+email:"customer@mailinator.com"
+};
+
+
+console.log(customer);
+
+var customerA = Object.create(customer);
+customerA.gender="male";
+customerA.phone="121212111";
+
+console.log(customerA);
+
+delete customerA.gender;
+console.log(customerA);
+
+delete customerA.id;
+console.log(customerA);
+
+var res_del_phone = delete customerA.phone;
+console.log(res_del_phone);
+
+var res_del_email = delete customerA.email;
+console.log(res_del_email);
+};
+
+</script>
+</head>
+<body>
+
+</body>
+</html> 

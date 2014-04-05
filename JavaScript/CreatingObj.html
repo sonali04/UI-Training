@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function myFunction()
+{
+//Using object initializers
+//The following example creates myHonda with three properties. Note that the engine property is also an object with its own properties.
+var myHonda = {
+		color: "red", 
+		wheels: 4, 
+		engine: {
+		 cylinders: 4, 
+         size: 2.2
+		}
+};
+console.log(myHonda);
+
+//Using a constructor function
+function Car(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+}
+var mycar = new Car("Eagle", "Talon TSi", 1993);
+
+//Using the Object.create method
+var o1 = Object.create({x:1, y:2}); // o1 inherits properties x and y.
+var o2 = Object.create(null); // o2 inherits no props or methods.
+var o3 = Object.create(Object.prototype); // o3 is like {} or new Object().
+console.log(o3);
+};
+
+</script>
+</head>
+<body>
+<div>
+</div>
+
+<div>
+</div>
+
+</body>
+</html> 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function(){
+
+ var customer = {
+  id: 32,
+  email: "customer@mailinator.com"
+   };
+var customerA = Object.create(customer);    
+customerA.gender="female";
+
+//The Object.isExtensible() method determines if an object is extensible 
+//(whether it can have new properties added to it).
+
+//Object is made non-extensible - yes
+//configurable is set to false for each property - No
+// writable is set to false for each property - No
+//http://msdn.microsoft.com/en-us/library/ff806186%28v=vs.94%29.aspx
+console.log(Object.isExtensible(customerA));//true	
+Object.preventExtensions(customerA);
+customerA.orders = 100;
+console.log(customerA);
+
+//Object is made non-extensible - yes
+//configurable is set to false for each property - yes
+// writable is set to false for each property - No
+Object.seal(customerA);
+console.log(Object.isSealed(customerA));
+customerA.gender="male";
+console.log(customerA);
+
+//Object is made non-extensible - yes
+//configurable is set to false for each property - yes
+// writable is set to false for each property - yes
+Object.freeze(customerA);
+console.log(Object.isFrozen(customerA));
+customerA.gender="male";
+console.log(customerA);
+
+};
+
+</script>
+</head>
+<body>
+
+</body>
+</html> 

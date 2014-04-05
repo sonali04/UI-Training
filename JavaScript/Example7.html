@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function(){
+var customer = Object.defineProperties({},{
+id:{
+value:100,
+enumerable: true,
+configurable: false,
+writable: false
+},
+email:{
+value:"customer@mailinator.com",
+enumerable: true,
+configurable: true,
+writable: true
+}
+});
+
+
+console.log(customer);
+console.log(Object.getOwnPropertyDescriptor(customer, "email"));
+
+
+};
+
+</script>
+</head>
+<body>
+
+</body>
+</html> 

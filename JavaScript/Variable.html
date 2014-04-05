@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function(){
+
+var testVar = "10"; //this has global scope
+
+function scopeTest() {
+var testVar = "20";  // this has local scope
+console.log(testVar); //WHAT DOES THIS LINE OUTPUT?
+}
+scopeTest();
+console.log(testVar); //WHAT DOES THIS LINE OUTPUT?
+
+var testVar = "10"; //this has global scope
+
+function scopeTest() {
+testVar = "20"; //this variable now has no "var" in front of it
+console.log(testVar); //WHAT DOES THIS LINE OUTPUT?
+}
+scopeTest();
+console.log(testVar); //WHAT DOES THIS LINE OUTPUT?
+
+};
+
+</script>
+</head>
+<body>
+
+</body>
+</html> 

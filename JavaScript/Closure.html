@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function(){
+
+function wish(msg) 
+{
+console.log(msg);
+}
+
+function greeting(name, occasion) 
+{
+return name + ", Happy " + occasion;
+}
+
+var message = greeting ("Arpit", "Birthday");
+
+// Pass it explicitly to wish
+wish(message);
+
+
+  
+ /*-The closure is a local variable of a function which remains alive after the function has returned.
+   -Closure combines a function with a local variable available at the time of creating closure.
+ */
+
+function greeting (name, occasion) 
+{
+var msg = name + ", Happy " + occasion;
+return function wish() 
+{
+console.log(msg);
+};
+}
+
+// create the closure
+var wisharpit = greeting ("Arpit", “Birthday”);
+
+// use the closure
+wisharpit ();
+
+//Here wish function is nested within the greeting, so closure can access the local variable of greeting which are name, occasion and msg.
+};
+
+</script>
+</head>
+<body>
+
+</body>
+</html> 

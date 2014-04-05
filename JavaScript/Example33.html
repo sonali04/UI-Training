@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function myFunction()
+{
+//variables gets hoisted to the top -- called variable hoisting 
+
+console.log(x);  // returns undefined as it has not been initialized 
+//note that it would have returned a reference error
+//had variable not existed.
+
+console.log(CustomerFunction1);   // returns undefined
+console.log(CustomerFunction2);   // returns the function definition 
+console.log(CustomerFunction2(10));  // returns the value 40 
+
+var x = 32;
+
+var CustomerFunction1  = function(_id, _email){
+this.id = _id;
+this. email = _email;
+}
+
+function CustomerFunction2(n){
+return n * 2;
+}
+};
+
+</script>
+</head>
+<body>
+<div>
+</div>
+
+<div>
+</div>
+
+</body>
+</html> 

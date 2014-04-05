@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function myFunction()
+{
+function multiplier(){
+
+//check if passed argument is an array
+var result = 1;
+
+if(Array.isArray(argements[0])){
+for (i = 0, len = argements[0].length; i < len; i++){
+result = result * argements[0][i];
+}
+return result;
+}
+else
+{
+for (i = 0, len = argements[0].length; i < len; i++){
+result = result * argements[i];
+}
+return result;
+}
+}
+
+var arr = [1,2,3,4,5];
+var m = multiplier(arr);
+console.log(m);
+
+m = multiplier(1,2,3,4,5);
+console.log(m);
+
+m = multiplier("1","2","3",4,5);
+console.log(m);
+
+//This is known as method Overloading
+};
+
+</script>
+</head>
+<body>
+<div>
+</div>
+
+<div>
+</div>
+
+</body>
+</html> 

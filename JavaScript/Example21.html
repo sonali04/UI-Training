@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function myFunction()
+{
+var  x = 10; y = 10;
+
+console.log(x === y);	 
+
+var a = { x:1};
+var b = { x:1};
+
+console.log(typeof a);	
+console.log(typeof b);	
+console.log(a === b);	 
+
+//function that compares two objects and returns true is all properties are the same 
+function compare(a1, b1) {
+    for (var i in a1) {
+        if (a1.hasOwnProperty(i)) {
+            if (!b1.hasOwnProperty(i)) return false;
+            if (a1[i] != b1[i]) return false;
+        }
+    }
+    for (var i in b1) {
+        if (b1.hasOwnProperty(i)) {
+            if (!b1.hasOwnProperty(i)) return false;
+            if (a1[i] != b1[i]) return false;
+        }
+    }
+    return true;
+}
+
+console.log(compare(a,b));
+
+};
+
+</script>
+</head>
+<body>
+<div>
+</div>
+
+<div>
+</div>
+
+</body>
+</html> 

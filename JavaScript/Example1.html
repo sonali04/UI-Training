@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function(){
+
+var customer = {
+id:2299229922,
+phone:"(408)451-2343",
+email:"customer@mailinator.com",
+address: {
+city:"San Jose",
+Zip:"95129"
+},
+
+"custom field": "..notes on customer..."
+
+};
+
+console.log(typeof customer);
+console.log(customer.id);
+console.log(customer.phone);
+console.log(customer.email);
+console.log(customer.address.city);
+console.log(customer["custom field"]);
+console.log(customer["id"]);
+
+};
+
+</script>
+</head>
+<body>
+
+</body>
+</html> 

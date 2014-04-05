@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function myFunction()
+{
+var customer = {
+id: 32,
+email: 'customer@mail.com'
+};
+var order1 = {
+id: 111,
+item: 'itemx'
+};
+var order2 = {
+id: 112,
+item: 'itemy'
+};
+
+
+
+function addOrder(customer){  // notice that only one input has been mentioned
+if (!customer.orders){
+customer.orders = []; // create an orders array in customer object if it does not exist
+}
+for(var i = 1, len = arguments.length; i < len; i++){
+arguments[0].orders.push(arguments[i]);
+}
+console.log(customer);
+}
+
+addOrder(customer, order1,order2);  // Variatic, Variable arity, varargs
+console.log(customer);
+
+// This interchange of named parameters and arguments object with index has been removed in the Es5 strict mode
+
+};
+
+</script>
+</head>
+<body>
+<div>
+</div>
+
+<div>
+</div>
+
+</body>
+</html> 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function(){
+var customer = {
+id:2299229922,
+email:"customer@mailinator.com"
+};
+
+
+console.log(customer);
+
+var customerA = Object.create(customer,{
+gender:{
+value:'male',
+enumerable: true,
+configurable: false,
+writable: true
+}
+});
+console.log(customerA);
+
+};
+
+</script>
+</head>
+<body>
+
+</body>
+</html> 

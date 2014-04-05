@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function myFunction()
+{
+var customer = {
+id: 32,
+email: 'customer@mail.com'
+};
+var order = {
+id: 111,
+item: 'itemx'
+};
+
+function addOrder(customer, order){
+if (!customer.orders){
+customer.orders = []; // create an orders array in customer object if it does not exist
+}
+customer.orders.push(order);
+}
+
+addOrder(customer, order);
+console.log(customer);
+};
+
+</script>
+</head>
+<body>
+<div>
+</div>
+
+<div>
+</div>
+
+</body>
+</html> 

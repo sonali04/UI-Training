@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function(){
+
+// global variable
+var testVar = "I'm a global";
+
+function example( )
+{
+  console.log(testVar);  //what does this line alert?
+  
+ /*local variable with same name as the global
+    declared outside the function
+	Here is what’s happening: the local testVar variable (the one declared in the example function) behaves as if it is defined throughout the entire function – even at the very top, because of the property of hoisting. This means that the global variable with the same name (“testVar”) is essentially hidden inside the function, because the local variable will take precedence over the global, and will be visible throughout the entire function.This is an interesting feature of Javascript known as hoisting, because it is as if Javascript is “hoisting” (which means to move up) the variable declaration to the top of the function.
+ */
+
+  var testVar = "I'm a local var";
+  console.log(testVar);  // what does this line alert?
+}
+
+example( );
+console.log(testVar);
+
+/* Output:
+undefined
+I'm a local var *?
+};
+
+</script>
+</head>
+<body>
+
+</body>
+</html> 

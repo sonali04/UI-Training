@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function myFunction()
+{
+var date = new Date();
+var utcStart = new Date(1970,0,1);
+console.log(date);
+console.log(date.toJSON()); //2014-04-03T22:47:13.556Z Z- is for UTC, also known as Zulu Time
+console.log(date.valueOf()); //1396565376958 : Returns the primitive value of a Date object
+console.log(date - utcStart); //1396565376958
+
+//For years greater than or equal to 2000, the value returned by getYear is 100 or greater. For example, if the year is 2026, getYear returns 126.
+//For years between and including 1900 and 1999, the value returned by getYear is between 0 and 99. For example, if the year is 1976, getYear returns 76
+//For years less than 1900, the value returned by getYear is less than 0. For example, if the year is 1800, getYear returns -100.
+//it is no longer used and has been replaced by the getFullYear method.
+console.log(date.getYear());  //114
+console.log(utcStart.getYear());  //70
+console.log(date.getFullYear()); //2014 : returns the year of the specified date according to local time.
+
+var someDate = new Date(); // Initialize to today's date
+
+// get functions
+console.log(someDate.getDate()); // Returns today's date value. E.g. 15
+console.log(someDate.getMonth()); // Returns today's month value. E.g. 10
+console.log(someDate.getHours()); // Returns today's hours value. E.g. 22 
+console.log(someDate.getFullYear()); // Returns full year of today's date. E.g. 2012
+
+//set functions
+someDate.setDate(20); // Set date to 20.
+someDate.setMonth(05); // Set month to June
+someDate.setYear(1999); // Set year to 1999
+console.log(someDate); // Display date
+
+};
+
+</script>
+</head>
+<body>
+<div>
+</div>
+
+<div>
+</div>
+
+</body>
+</html> 

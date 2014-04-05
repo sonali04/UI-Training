@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function myFunction()
+{
+function CustomerConstructor(_id, _email){
+this.email = _email;   //instance variables
+this._id = _id;
+this.orders = [];
+this.addOrder = function(order){   //instance function
+this.orders.push(order);
+};
+CustomerConstructor.instances ++;
+}
+
+CustomerConstructor.instances = 0;  //static Property
+CustomerConstructor.predictTotalOrders = function(){   //instance function
+return CustomerConstructor.instances * 10;
+};
+
+var customerx = new CustomerConstructor(1, 'customerx@mail.com');
+var customery = new CustomerConstructor(2, 'customery@mail.com');
+
+var order = {
+id:32,
+item: 'itemx'
+
+};
+
+console.log(CustomerConstructor.instances);  // track number of customers created
+console.log(CustomerConstructor.predictTotalOrders());
+
+customerx.addOrder(order);
+console.log(customerx);
+
+};
+
+</script>
+</head>
+<body>
+<div>
+</div>
+
+<div>
+</div>
+
+</body>
+</html> 

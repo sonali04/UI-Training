@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function(){
+
+var customer = {
+id:2299229922,
+email:"customer@mailinator.com"
+};
+customer.id=32;
+console.log(typeof customer.id);
+console.log(customer.id);
+
+Object.defineProperty(customer, "id", {writable: false});
+customer.id=64;
+console.log(typeof customer.id);
+console.log(customer.id);
+
+
+Object.defineProperty(customer, "id", {configurable:true});
+Object.defineProperty(customer, "id", {writable: true});
+console.log(Object.getOwnPropertyDescriptor(customer, "id"));
+
+
+};
+
+</script>
+</head>
+<body>
+
+</body>
+</html> 

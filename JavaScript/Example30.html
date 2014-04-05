@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function(){
+
+var x = {
+val = "Hello";
+};
+
+function changeX(x) {
+return x.val.slice(3,5);
+}
+
+function changeY(x) {
+x.val =  x.val.slice(3,5);
+}
+
+console.log(changeX(x));  
+
+changeX(x);
+
+console.log(x.val);
+
+
+};
+
+</script>
+</head>
+<body>
+
+</body>
+</html> 

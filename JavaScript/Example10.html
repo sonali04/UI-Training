@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function(){
+
+ var customer = {
+  id: 32,
+ email: "customer@mailinator.com"
+   };
+                
+                var customerA = Object.create(customer);
+                customerA.gender ="male";
+                customerA.phone = "323456789";
+                Object.defineProperty(customerA, 'phone' , {enumerable: false});
+                
+                console.log(customerA);  //explain that gender and phone are own properties
+                console.log(customer);   // explain that properties id and email are inherited
+                
+				// the "in" operator checks for own and inherited properties expects a string and object as argument 
+                console.log('id' in customerA);
+                console.log('gender' in customerA);
+                
+				//.hasOwnProperty() checks for own properties only
+                console.log(customerA.hasOwnProperty('id'));
+                console.log(customerA.hasOwnProperty('gender'));
+                
+				//.propertyIsEnumerable() checks if the properties can be enumerated
+                console.log(customerA.propertyIsEnumerable('id'));
+                console.log(customerA.propertyIsEnumerable('gender'));
+                console.log(customerA.propertyIsEnumerable('phone'));
+                
+                console.log('\nPrinting customerA properties as name:value pairs: \n');
+                for (var prop in customerA) {
+                    console.log(prop + ':' + customerA[prop]);
+                                
+                }
+
+                 for (var prop in customerA) {
+				 if( customerA.propertyIsEnumerable( prop ) ) {
+                 console.log(prop + " = " + customerA[prop]);
+                 }                
+                          
+                }
+				
+				
+				 for (var prop in customerA) {
+				 if( Object.keys(customerA) ) {
+                 console.log(prop + " = " + customerA[prop]);
+                 }                
+                          
+                }
+
+				
+				// lets you easily get the enumerable properties of an object, not including any inherited from the prototype chain. It returns the data as an array
+				 for (var prop in Object.keys(customerA)) {				
+                 console.log(prop + " = " + customerA[prop]);                              
+                          
+                }
+
+				console.log(Object.keys(customerA));
+
+
+};
+
+</script>
+</head>
+<body>
+
+</body>
+</html> 
+

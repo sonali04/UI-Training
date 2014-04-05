@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function(){
+
+var x = .3;
+var y = .2;
+var z = .1;
+
+console.log(x-y);  
+console.log(z);  
+console.log((x-y) === z);   //false
+
+
+var currency = {
+
+_var : 0,
+
+get dollars() { return this._var / 100 },
+set dollars(_inpval) { this._var = _inpval * 100},
+get cents() { return this._var }
+};
+
+X = Object.create(currency);
+X.cents = .3;
+console.log(X);  
+console.log(X.cents);  
+
+Y = Object.create(currency);
+Y.cents = .2;
+console.log(Y);  
+console.log(Y.cents);  
+
+Z = Object.create(currency);
+Z.cents = .1;
+console.log(Z);  
+console.log(Z.cents);  
+
+console.log((X.cents - Y.cents) === Z.cents );  
+
+};
+
+</script>
+</head>
+<body>
+
+</body>
+</html> 

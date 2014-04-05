@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function myFunction()
+{
+// does not convert the values when comparing. exactly equal to (equal value and equal type)
+console.log(false === ''); //strict equality operator checks if both operands are of the same data type
+
+//interpreter implicitly tries to convert the values before comparing.(equal to)
+console.log(false == ''); //why does this work because '' is converted to false and then compared
+
+var falsy = [undefined, null,0, -0, NaN, '']; 
+
+for (var i = 0; i < falsy.length; i++){
+console.log('if' + falsy[i]);
+if (falsy[i])
+{
+console.log(' >> Evaluates to true');
+}
+else
+{
+console.log(' >> Evaluates to False');
+}
+}
+
+// ! = not	 eg.- !(x==y) is true
+var x = 6;
+console.log( x != 8);
+
+};
+
+</script>
+</head>
+<body>
+<div>
+</div>
+
+<div>
+</div>
+
+</body>
+</html> 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function(){
+
+var parent = {
+x:32,
+y:44
+
+};
+var child = Object.create(parent);
+console.log(typeof child);
+console.log(child instanceof Object);
+
+var child2 = Object.create(null);
+console.log(child2 instanceof Object);
+console.log(typeof child.toString());
+
+};
+
+</script>
+</head>
+<body>
+
+</body>
+</html> 

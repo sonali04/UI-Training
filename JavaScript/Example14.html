@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<title>Objects</title>
+
+<head>
+<script>
+window.onload = function myFunction()
+{
+var customer = {
+id : 32,
+email : 'sonali@gmail.command'
+};
+//JSON.stringify turns an object in to a JSON text and stores that JSON text in a string.
+//JSON.parse turns a string of JSON text into an object.
+
+var serialized_customer = JSON.stringify (customer);
+console.log(serialized_customer);
+
+var customer_deserialized = JSON.parse(serialized_customer);
+console.log(customer_deserialized);
+
+
+//If an object defines a toJSON() method, JSON.stringify will call that method to determine the object's JSON representation. For example:
+
+x = {}; 
+x.foo = "foo";  
+x.toJSON = function() { return "bar"; }; 
+var json1 = JSON.stringify(x);
+console.log(json1);
+
+//Limitation:
+//You cannot serialize an object that has members which are functions. The JSON specification does not allow it. For example:
+foo = {};
+foo.qwerty = function(){alert('foobar');}; 
+foo.qwerty() 
+var JSONfoo = JSON.toString(foo);
+//will raise a TypeError on line XXX: No JSON representation for this object!
+};
+
+</script>
+</head>
+<body>
+<div>
+</div>
+
+<div>
+</div>
+
+</body>
+</html> 
